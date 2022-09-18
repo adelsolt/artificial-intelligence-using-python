@@ -1,3 +1,5 @@
+Complete Code to Get weather forecast using Python:
+
 #Weather report
 #Importing Beautifulsoup Library
 from bs4 import BeautifulSoup
@@ -46,3 +48,13 @@ city=city+" weather"
 
 #passing the city object to weather function
 weather(city)
+
+Output:
+
+enter the city name
+pune
+Searching in google ...
+pune, Maharashtra
+Sunday, 2:00 am
+clear
+25°C
