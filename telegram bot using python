@@ -1,0 +1,38 @@
+Step 1: Import the libraries:
+
+from telegram import *
+from telegram.ext import *
+
+Step 2: Fetching the bot information
+
+bot = Bot("Past token ID")
+print(bot.get_me()) 
+
+Step 3:  Update the for future changes
+
+updater=Updater("Past token ID ",use_context=True)
+#use_context is use for if your telegram version is low than use false else use true
+
+Step 4: A dispatcher is used to dispatch this update to our telegram bot
+
+dispatcher=updater.dispatcher
+
+Step 5: We create the command for a specific reply that we want
+
+# For Commands 
+def test_fnc2(update: Update, context: CallbackContext):
+    bot.send_message(
+        chat_id=update.effective_chat.id,
+        text="Welcome to our bot chat ",
+        )
+start_value2=CommandHandler('start', test_fnc2)
+dispatcher.add_handler (start_value2)
+
+#adding more Command
+def test_fnc(update: Update, context: CallbackContext):
+    bot.send_message(
+        chat_id=update.effective_chat.id,
+        text="tutorial link: 'the link' ",
+        )
+start_value=CommandHandler('python', test_fnc)
+dispatcher.add_handler (start_value)
